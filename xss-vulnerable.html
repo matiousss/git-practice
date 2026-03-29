@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Уязвимая страница</title></head>
+<body>
+<h1>Поиск по сайту</h1>
+<p>Вы искали: <span id="searchResult"></span></p>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const userQuery = urlParams.get("query") || "ничего";
+// Уязвимый код
+document.getElementById("searchResult").innerHTML = userQuery;
+</script>
+</body>
+</html>
